@@ -1,0 +1,52 @@
+# 启动项目自动打开浏览器
+server:
+  port: 8080
+openProject:
+  isOpen: true
+  cmd: cmd   /c   start
+  web:
+    openUrl: http://localhost:${server.port}
+
+
+
+# Spring配置
+spring:
+  application:
+    name: Demo
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: false
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/products?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      keep-alive: true
+      max-evictable-idle-time-millis: 3600000
+      min-evictable-idle-time-millis: 300000
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  web:
+    resources:
+      static-locations: classpath:/static/, file:${photo.file.dir}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 32
+        max-wait: 300ms
+        max-idle: 16
+        min-idle: 8

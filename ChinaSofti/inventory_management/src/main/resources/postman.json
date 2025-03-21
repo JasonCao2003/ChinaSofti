@@ -1,0 +1,58 @@
+{
+  "info": {
+    "name": "Bank Transfer API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Check Account Balance",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/accounts/123456/balance",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "accounts",
+            "123456",
+            "balance"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Transfer Money",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fromAccount\": \"123456\",\n  \"toAccount\": \"789012\",\n  \"amount\": 200.00\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/accounts/transfer",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "accounts",
+            "transfer"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

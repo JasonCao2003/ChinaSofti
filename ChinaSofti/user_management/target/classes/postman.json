@@ -1,0 +1,97 @@
+{
+    "info": {
+      "name": "Users API Collection",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get All Users",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/users?page=0&size=10&sortBy=id",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["users"],
+            "query": [
+              { "key": "page", "value": "0" },
+              { "key": "size", "value": "10" },
+              { "key": "sortBy", "value": "id" }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get User by ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/users/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["users", "1"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Create User",
+        "request": {
+          "method": "POST",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"testuser\",\n  \"nickname\": \"Test\",\n  \"email\": \"test@example.com\",\n  \"password\": \"123456\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/users",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["users"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Update User",
+        "request": {
+          "method": "PUT",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"updatedUser\",\n  \"nickname\": \"Updated\",\n  \"email\": \"updated@example.com\",\n  \"password\": \"654321\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/users/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["users", "1"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Delete User",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/users/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["users", "1"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
